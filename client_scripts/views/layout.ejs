@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="arun"  ng-controller="HomeClrt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PW</title>
+    <link rel='stylesheet' id='calm-css'  href='/stylesheets/style-layout.css' type='text/css' media='all' />
+	  <link rel='stylesheet' id='calm-css'  href='/stylesheets/flexslider.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='animate-css'  href='/stylesheets/animate.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='animate-css'  href='/stylesheets/bootstrap.min.css' type='text/css' media='all' />
+    <script type='text/javascript' src='/javascripts/jquery.js'></script>
+    <script src="/javascripts/jquery.flexslider.js"></script>
+	  <script src="/javascripts/angular.js"></script>
+	  <script src="/javascripts/angular-flexslider.js"></script>
+    <script type='text/javascript' src='/javascripts/imagesloaded.pkgd.min.js'></script>
+    <script type='text/javascript' src='/javascripts/scripts.js'></script>
+    <script type='text/javascript' src="/javascripts/angular-route.js"></script>
+    <script type='text/javascript' src="/javascripts/app.js"></script>
+    <script type='text/javascript' src="/javascripts/appRoutes.js"></script>
+    <script src="/javascripts/ui.bootstrap.js"></script>
+    <script type='text/javascript' src="/javascripts/angular/controllers/home_clrt.js"></script>
+    <script type='text/javascript' src="/javascripts/angular/controllers/aboutClrt.js"></script>
+    <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+    <style type="text/css" media="screen">
+      a, .page-content ul li a:hover, .page-content ol li a:hover, section.page-content .post.single .post-content ul.tags li a, section.page-content .page.single .post-content ul.tags li a, section.page-content .post .post-title h2 a:hover, section.page-content .page .post-title h2 a:hover, section.page-content .post .author span.name a:hover, section.page-content .page .author span.name a:hover, section.page-content aside.post-aside .comments-container ul.comment-list li .comment a.comment-reply-link, .posts-nav a:hover, .portfolio .port-filter ul.filter li:hover, .portfolio .portfolio-cont .item .img-container span.cats, aside.side-bar .widget ul li a:hover, #commentform input#submit, #commentform textarea#submit, .wpcf7-form input.wpcf7-submit, .wpcf7-form textarea.wpcf7-submit {
+        color: #e74b43;
+      }
+      header ul.social li a, section.page-content .post .post-format i, section.page-content .page .post-format i, section.page-content aside.post-aside .comments-container ul.comment-list li.bypostauthor .comment .vcard span.is-author, .posts-nav a, .posts-nav ul li a, .page-links a span, .sidebar-toggle i, aside.side-bar .widget input:focus, #commentform input:focus, #commentform textarea:focus, .button, .dot1, .dot2, .wpcf7-form input:focus, .wpcf7-form textarea:focus {
+        background-color: #e74b43;
+      }
+    </style>
+  </head>
+
+  <body class="page page-id-25 page-template-default">
+    <div id="pre-loader">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <header id="site-header">
+        <div class="logo animated flipInX">
+          <a href="http://ksdesigning.com/themes/calm/" title="Calm WordPress Theme" rel="home"><img src="http://ksdesigning.com/themes/calm/wp-content/uploads/2014/05/logo.png" alt="Calm WordPress Theme" /></a>
+        </div>
+        <nav>
+          <ul id="menu-main" class="main-nav animated flipInX delay1">
+            <li id="menu-item-1740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1740">
+              <a href="/about">Home</a>
+            </li>
+            <li id="menu-item-1741" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-25 current_page_item menu-item-1741">
+              <a href="/about">About</a>
+            </li>
+            <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
+              <a href="/about">Portfolio</a>
+            </li>
+            <li id="menu-item-1758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1758">
+              <a href="/about">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <section class="page-content animated fadeInUpBig fast" style="display: block;">
+      <article id="post-25" class="post-25 page type-page status-publish has-post-thumbnail hentry single">
+        <div class="post-thumb">
+          <flex-slider
+              flex-slide="s in slideshows track by $index">
+          		<li>
+          			<img ng-src="{{s}}" class="attachment-blog wp-post-image" style="height:300px">
+          		</li>
+          </flex-slider>
+        </div>
+        <div class="post-content">
+          <%- body %>
+      </article>
+    </section>
+  </body>
+</html>

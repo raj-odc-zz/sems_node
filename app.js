@@ -1,18 +1,27 @@
+var subdomain = require('express-subdomain');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var db = require('./configs/database');
+// Mongoose import
+// var mongoose = require('mongoose');
 
-var routes = require('./server_scripts/routes/index');
-var users = require('./server_scripts/routes/users');
+// require all models for application
+// mongoose.connect('mongodb://localhost/sems');
 
-var app = express();
 // for layout purpose
-var expressLayouts = require('express-ejs-layouts')
+
+var renderPage = require('./server_scripts/routes/index');
+// var apiRoutes = require('./server_scripts/routes/users');
+var app = express();
+
 
 // view engine setup
+var expressLayouts = require('express-ejs-layouts')
 app.set('views', path.join(__dirname, 'client_scripts/views'));
 app.set('view engine', 'ejs');
 app.set('view options', { locals: { scripts: ['jquery.js'] } });
@@ -25,9 +34,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client_scripts/public')));
 app.use(expressLayouts)
+var routes = {};
+routes.user = require(process.cwd() + "/server_scripts/model/user.js");
 
-app.use('/', routes);
-// app.use('/users', users);
+app.use('/api/users', routes.user.index);
+// admin.use('/api/', apiRoutes);
+app.use('/', renderPage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

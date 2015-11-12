@@ -3,9 +3,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     $routeProvider
 
         // home page
-        .when('/home', {
-            templateUrl: 'views/home.html',
-            controller: 'HomeClrt'
+        .when('/users', {
+            templateUrl: 'templates/users.ejs',
+            controller: 'UserClrt'
         })
 
         // nerds page that will use the NerdController
